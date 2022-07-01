@@ -45,15 +45,14 @@ spring:
       routes:
         # Provide routes to other services here
         - id: user
-          uri: lb://USER
+          uri: lb://USER # has to match spring.application.name
           predicates:
-            - Path=/api/v1/user/**
+            - Path=/api/v1/user/** # /** means match any route
   
 server:
   port: 8083
 ```
-This example assumes that we have an application running, with the name `spring.application.name=user`.
-This application is running on port `8090`.
+This example assumes that we have an application running, with the name `spring.application.name=user` and port `8090`.
 Our router is running on port `8083` as specified above.
 
 Any request coming to `localhost:8083/api/v1/user` will be forwarded to `localhost:8090/api/v1/user`.
@@ -86,7 +85,8 @@ eureka:
     healthcheck:
       enabled: true
 ```
-This configuration option is with the eureka client. With this set to true, the eureka client will communicate a heartbeat with the server,
+This configuration option is with the eureka client.
+With this set to true, the eureka client will communicate a heartbeat with the server,
 and Spring will disable its health checks, forwarding this status to any inquiries.
 
 More detailed health info can be accessed at `localhost:8083`.

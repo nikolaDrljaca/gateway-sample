@@ -5,6 +5,7 @@ In the service discovery pattern, a service registry is needed which will keep t
 This, of course, is crucial information for the API Gateway.
 
 Using the `eureka-server`, there are only a few things that need to be configured for this to act as a server.
+
 Inside the `application.yml`:
 ```yaml
 spring:
@@ -16,6 +17,6 @@ server:
 
 eureka:
   client:
-    fetch-registry: false
-    register-with-eureka: false
+    fetch-registry: false # don't fetch the registry, the clients will do that
+    register-with-eureka: false # the server does not need to register itself
 ```
