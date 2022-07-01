@@ -33,6 +33,12 @@ Other available options are Kubernetes and a Managed API Gateway. Both approache
 
 Given the service discovery pattern, the run order of the applications is important. Check the provided README files under each submodule for more details.
 
+Recommended approach would be to open the project root in IntelliJ. This would allow quick deployment, and fix any issues in Java SDK 
+incompatibility. Alternatively, `maven` can be used to build and run the `.jar` files from the terminal. 
+
+Another approach would be to use Docker, but this would require more setup in code and appropriate `.dockerfile`s for the 
+modules. For reference `.dockerfile`s, check the other repositories' ex. [ktor-rmq](https://github.com/nikolaDrljaca/ktor-rmq/blob/main/Dockerfile)
+
 The project assumes a JDK is present on the system and has higher precedence in the system PATH.
 
 The project level Java SDK required is at least 17.
