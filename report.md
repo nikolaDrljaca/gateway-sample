@@ -20,7 +20,7 @@ Details for Service Discovery, API Gateway and Load Balancing
 
 Commonly, in a distributed system depending on the number of services and the number of running instances, communicating with services directly might not be the best approach.
 
-For clients, most of the time it is most convenient to expose singluar endpoints that 'just work'.
+For clients, most of the time it is most convenient to expose singular endpoints that 'just work'.
 
 **API Gateway** is a pattern that exposes a single entrypoint for each client. Gateways are most commonly deployed by client device type (mobile, web, vehicle, IoT, etc).
 
@@ -37,14 +37,14 @@ Two types:
 - `external`: Usually coupled with `API Gateway`. Incoming traffic is distributed among available services.
 - `internal`: A load balancer placed in from of the MS itself, unknown to the gateway or outside world.
 
-Distribution based on algoritm.
+Distribution based on algorithm.
 
 ----
 
 ![](api_gateway.png)
 ----
 
-# Imlpementation
+# Implementation
 
 For an implementation of the above concepts, a few possible options exist.
 
@@ -62,7 +62,7 @@ Each of the services is built using Spring Boot and has a specific responsibilit
 
 Based on the open-source Netflix library.
 
-Very simple to setup with spring boot. 
+Very simple to set up with spring boot. 
 
 Dashboard available at `localhost:8761` by default.
 
